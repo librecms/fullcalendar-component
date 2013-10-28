@@ -47,6 +47,7 @@ html .fc,
 .fc-header-right {
 	width: 25%;
 	text-align: right;
+  float: right;
 	}
 	
 .fc-header-title {
@@ -54,7 +55,7 @@ html .fc,
 	vertical-align: top;
 	}
 	
-.fc-header-title h2 {
+.fc-header-title h2, .fc-header-title h3, .fc-header-title h4 {
 	margin-top: 0;
 	white-space: nowrap;
 	}

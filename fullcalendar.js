@@ -746,9 +746,9 @@ function Header(calendar, options) {
 		tm = options.theme ? 'ui' : 'fc';
 		var sections = options.header;
 		if (sections) {
-			element = $("<table class='fc-header' style='width:100%'/>")
+			element = $("<div class='fc-header'/>")
 				.append(
-					$("<tr/>")
+					$("<div class='row'/>")
 						.append(renderSection('left'))
 						.append(renderSection('center'))
 						.append(renderSection('right'))
@@ -764,7 +764,7 @@ function Header(calendar, options) {
 	
 	
 	function renderSection(position) {
-		var e = $("<td class='fc-header-" + position + "'/>");
+		var e = $("<div class='col-xs-12 col-md-4 fc-header-" + position + "'/>");
 		var buttonStr = options.header[position];
 		if (buttonStr) {
 			$.each(buttonStr.split(' '), function(i) {
@@ -774,7 +774,7 @@ function Header(calendar, options) {
 				var prevButton;
 				$.each(this.split(','), function(j, buttonName) {
 					if (buttonName == 'title') {
-						e.append("<span class='fc-header-title'><h2>&nbsp;</h2></span>");
+						e.append("<span class='fc-header-title'><h4>&nbsp;</h4></span>");
 						if (prevButton) {
 							prevButton.addClass(tm + '-corner-right');
 						}
@@ -849,7 +849,7 @@ function Header(calendar, options) {
 	
 	
 	function updateTitle(html) {
-		element.find('h2')
+		element.find('h4')
 			.html(html);
 	}
 	
